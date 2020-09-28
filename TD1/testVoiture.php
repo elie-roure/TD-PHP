@@ -4,17 +4,17 @@
 	<title>test</title>
 </head>
 <body>
-<?php
+	<?php
 
-require_once('Voiture.php');
+	require_once('Voiture.php');
 
 
 
-$voiture1 = new Voiture('zoulou', 'blue', '54bgv65');
+	$voiture1 = new Voiture('zoulou', 'blue', '54bgv65');
 
-$voiture1->afficher();
+	$voiture1->afficher();
 
-?>
+	?>
 
 
 
