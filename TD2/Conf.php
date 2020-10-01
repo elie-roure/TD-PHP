@@ -5,15 +5,18 @@ class Conf {
     // Le nom d'hote est webinfo a l'IUT
     // ou localhost sur votre machine
 		'hostname' => 'webinfo',
+		//'hostname' => 'localhost',
     // A l'IUT, vous avez une BDD nommee comme votre login
     // Sur votre machine, vous devrez creer une BDD
 		'database' => 'rouree',
     // A l'IUT, c'est votre login
     // Sur votre machine, vous avez surement un compte 'root'
 		'login' => 'rouree',
+		//'login' => 'root',
     // A l'IUT, c'est votre mdp (INE par defaut)
     // Sur votre machine personelle, vous avez creez ce mdp a l'installation
 		'password' => 'elieeroure'
+		
 	);
 
 	static public function getLogin() {
