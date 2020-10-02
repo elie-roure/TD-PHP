@@ -1,17 +1,13 @@
 <?php
 
 require_once 'Model.php';
-require_once 'Utilisateur.php';
+require_once 'Trajet.php';
 
-class Trajet {
+class Utilisateur {
 
-    private $id;
-    private $depart;
-    private $arrivee;
-    private $date;
-    private $nbplaces;
-    private $prix;
-    private $conducteur_login;
+    private $login;
+    private $nom;
+    private $prenom;
 
     // Getter générique (pas expliqué en TD)
     public function get($nom_attribut) {
@@ -28,28 +24,25 @@ class Trajet {
     }
 
     // un constructeur
-    public function __construct($data = array()) {
-        if (!empty($data)) {
-            $this->id = $data["id"];
-            $this->depart = $data["depart"];
-            $this->arrivee = $data["arrivee"];
-            $this->date = $data["date"];
-            $this->nbplaces = $data["nbplaces"];
-            $this->prix = $data["prix"];
-            $this->conducteur_login = $data["conducteur_login"];
+    public function __construct($login = NULL, $nom = NULL, $prenom = NULL) {
+        if (!is_null($login) && !is_null($nom) && !is_null($prenom)) {
+            $this->login = $login;
+            $this->nom = $nom;
+            $this->prenom = $prenom;
         }
     }
+
     // une methode d'affichage.
     public function afficher() {
-        echo "Ce trajet du {$this->date} partira de {$this->depart} pour aller à {$this->arrivee}.";
+        echo "Utilisateur {$this->prenom} {$this->nom} de login {$this->login}";
     }
 
-    public static function getAllTrajets() {
+    public static function getAllUtilisateurs() {
         try {
             $pdo = Model::$pdo;
-            $sql = "SELECT * from trajet";
+            $sql = "SELECT * from utilisateur";
             $rep = $pdo->query($sql);
-            $rep->setFetchMode(PDO::FETCH_CLASS, 'Trajet');
+            $rep->setFetchMode(PDO::FETCH_CLASS, 'Utilisateur');
             return $rep->fetchAll();
         } catch (PDOException $e) {
             if (Conf::getDebug()) {
