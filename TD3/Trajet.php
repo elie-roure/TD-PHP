@@ -60,4 +60,40 @@ class Trajet {
             die();
         }
     }
-}
+    public static function findPassagers($id){
+        try {
+            $sql = "SELECT * FROM passager
+            JOIN utilisateur ON
+            utilisateur.login = passager.utilisateur_login
+            WHERE trajet_id=:id_pass";
+            $req_prep = Model::$pdo->prepare($sql);
+            $values = array(
+                "id_pass" => $id,
+            );
+            $req_prep->execute($values);
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'utilisateur');
+            $tab_info = $req_prep->fetchAll();
+            if (empty($tab_info)){
+                return false;
+            }
+            else{
+                return $tab_info;
+            }
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
+            die();
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'voiture');
+            $tab_users = $req_prep->fetchAll();
+            return $tab_users;
+            // Attention, si il n'y a pas de résultats, on renvoie false
+            /* if (empty($tab_voit))
+              return false;
+              return $tab_voit[0]; */
+          }
+
+      }
+  }
