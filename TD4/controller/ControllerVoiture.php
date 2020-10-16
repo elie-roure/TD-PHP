@@ -14,7 +14,7 @@ class ControllerVoiture {
     	}else {
     		require ('../view/voiture/detail.php');
     	}
-<<<<<<< HEAD
+
     }
 
     public static function create(){
@@ -31,7 +31,6 @@ class ControllerVoiture {
         $v = new ModelVoiture($marque,$couleur,$immat);
         $v->save();
         ControllerVoiture::readAll();
-=======
->>>>>>> b35b65b364fa72888dc1e834d56d021f96e90086
+
     }
 }
