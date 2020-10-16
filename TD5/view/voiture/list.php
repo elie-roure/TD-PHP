@@ -6,9 +6,10 @@
 </head>
 <body>
     <?php
+    
     foreach ($tab_v as $v)
     
-    echo '<p> Voiture d\'immatriculation <a href="https://webinfo.iutmontp.univ-montp2.fr/~rouree/PHP/TD-PHP/TD4/controller/routeur.php?action=read&immat=' . $v->getImmatriculation() . '">'. $v->getImmatriculation() .'</a> .</p>';
+    echo '<p> Voiture d\'immatriculation <a href="index.php?action=read&immat=' . rawurlencode($v->getImmatriculation()) . '">'.  htmlspecialchars($v->getImmatriculation()) .'</a> .</p>';
     ?>
 </body>
 </html>

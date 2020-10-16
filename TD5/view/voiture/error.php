@@ -6,7 +6,9 @@
 </head>
 <body>
      <?php
-        echo "La voiture immatriculé : " . $immat . " n'est pas repertoriée." ;
+     $immatHTML = htmlspecialchars($immat);
+     $immatURL = rawurlencode($immat);
+        echo "La voiture immatriculée : " .  $immatHTML . " n'est pas repertoriée." ;
         ?>
 </body>
 </html>

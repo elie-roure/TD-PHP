@@ -15,8 +15,8 @@ class ControllerVoiture {
             require (File::build_path(array("view", "voiture", "error.php")));
     		//require ('../view/voiture/error.php');
         }else {
-           // require (File::build_path(array("view", "voiture", "detail.php")));
-          require ('../view/voiture/detail.php');
+           require (File::build_path(array("view", "voiture", "detail.php")));
+          // require ('../view/voiture/detail.php');
       }
 
   }
