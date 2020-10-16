@@ -5,7 +5,9 @@
 </head>
 <body>
 	<?php
-	require_once '/home/ann2/rouree/public_html/PHP/TD-PHP/TD5/lib/File.php';
+	$ROOT_FOLDER = __DIR__;
+	$DS = DIRECTORY_SEPARATOR;
+	require_once "$ROOT_FOLDER". "$DS" ."lib". "$DS". "File.php";
 	require_once (File::build_path(array("controller", "routeur.php")));;
 	?>
 
