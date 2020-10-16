@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Detail voiture</title>
-</head>
+
 <body>
 
 	<?php
@@ -16,4 +11,4 @@
 	</ul>";
 	?>
 </body>
-</html>
+

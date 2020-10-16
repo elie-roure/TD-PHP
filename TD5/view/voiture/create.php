@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <meta charset="utf-8" />
-        <title> Creation voiture </title>
-   </head>
+
 <body>
 
 	<form method="get" action="index.php">
@@ -31,4 +26,3 @@
 	</form>
 
 </body>
-</html>
