@@ -10,8 +10,8 @@
 	echo " 
 	<ul>
 		<li>Marque : " . $v->getMarque() . "</li>
-		 <li>Couleur : " . $v->getCouleur() . "</li>
-		 <li>Immatriculation : " . $v->getImmatriculation() . "</li>
+		<li>Couleur : " . $v->getCouleur() . "</li>
+		<li>Immatriculation : " . $v->getImmatriculation() . "</li>
 	</ul>";
 	?>
 </body>
