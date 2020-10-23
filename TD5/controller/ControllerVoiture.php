@@ -50,7 +50,14 @@ public static function created(){
 
   $v = new ModelVoiture($marque,$couleur,$immat);
   $v->save();
-  ControllerVoiture::readAll();
+
+  $tab_v = ModelVoiture::getAllVoitures(); 
+
+  $pagetitle = 'Voiture créée';
+  $view = 'created';
+  $controller = 'voiture';
+  require (File::build_path(array("view", "view.php")));
+
 
 }
 }
