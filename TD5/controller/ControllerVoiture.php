@@ -15,19 +15,29 @@ class ControllerVoiture {
   public static function read(){
 
    $immat = $_GET['immat'];
+
+   $pagetitle = $immat;
+
    $v = ModelVoiture::getVoitureByImmat($immat);
    if ($v == null) {
-    require (File::build_path(array("view", "voiture", "error.php")));
+    $view = 'error';
+    $controller = 'voiture';
+    require (File::build_path(array("view", "view.php")));
     		//require ('../view/voiture/error.php');
   }else {
-   require (File::build_path(array("view", "voiture", "detail.php")));
+    $view = 'detail';
+    $controller = 'voiture';
+   require (File::build_path(array("view", "view.php")));
           // require ('../view/voiture/detail.php');
  }
 
 }
 
 public static function create(){
-  require (File::build_path(array("view", "voiture", "create.php")));
+  $pagetitle = 'Creation Voiture';
+  $view = 'create';
+  $controller = 'voiture';
+  require (File::build_path(array("view", "view.php")));
     //require ('../view/voiture/create.php');
 }
 
