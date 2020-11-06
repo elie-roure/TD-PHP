@@ -33,6 +33,27 @@ class ControllerVoiture {
 
 }
 
+public static function delete(){
+  $tab_v = ModelVoiture::getAllVoitures();
+  $immat = $_GET['immat'];
+
+  $pagetitle = $immat;
+
+  $v = ModelVoiture::getVoitureByImmat($immat);
+  if ($v == null) {
+    $view = 'error';
+    $controller = 'voiture';
+    require (File::build_path(array("view", "view.php")));
+  }else {
+    ModelVoiture::deleteByImmat($immat);
+    $view = 'deleted';
+    $controller = 'voiture';
+    require (File::build_path(array("view", "view.php")));
+          // require ('../view/voiture/detail.php');
+  }
+
+}
+
 public static function create(){
   $pagetitle = 'Creation Voiture';
   $view = 'create';
