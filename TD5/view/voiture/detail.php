@@ -1,5 +1,4 @@
 
-<body>
 
 	<?php
 	
@@ -10,5 +9,4 @@
 	<li>Immatriculation : " .  htmlspecialchars($v->getImmatriculation()) . "</li>
 	</ul>";
 	?>
-</body>
 

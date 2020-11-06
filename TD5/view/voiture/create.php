@@ -1,5 +1,4 @@
 
-<body>
 
 	<form method="get" action="index.php">
 
@@ -25,4 +24,3 @@
 		</fieldset>
 	</form>
 
-</body>

@@ -5,12 +5,9 @@ require_once (File::build_path(array("controller", "ControllerVoiture.php")));
 
 if (!isset($_GET['action'])) {
 	$action = "readAll";
+}else if (!in_array($_GET['action'],get_class_methods(ControllerVoiture))) {
+	$action = 'error';
 }else $action = /*"readAll"*/$_GET['action'];
-
-if (!in_array($action,get_class_methods(ControllerVoiture)) {
-	
-}
-
 
 // Appel de la méthode statique $action de ControllerVoiture
 ControllerVoiture::$action(); 

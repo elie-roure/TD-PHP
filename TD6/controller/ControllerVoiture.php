@@ -27,9 +27,9 @@ class ControllerVoiture {
   }else {
     $view = 'detail';
     $controller = 'voiture';
-   require (File::build_path(array("view", "view.php")));
+    require (File::build_path(array("view", "view.php")));
           // require ('../view/voiture/detail.php');
- }
+  }
 
 }
 
@@ -59,5 +59,13 @@ public static function created(){
   require (File::build_path(array("view", "view.php")));
 
 
+}
+
+public static function error(){
+  $pagetitle='Erreur';
+  $controller='voiture';
+  $view='error';
+
+  require (File::build_path(array("view", "view.php")));         
 }
 }
