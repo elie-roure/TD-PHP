@@ -1,5 +1,7 @@
 <?php
-require_once '/home/ann2/rouree/public_html/PHP/TD-PHP/TD6/lib/File.php';
+//require_once '/home/ann2/rouree/public_html/PHP/TD-PHP/TD6/lib/File.php';
+require_once '/opt/lampp/htdocs/TD-PHP/TD6/lib/File.php';
+
 require_once (File::build_path(array("controller", "ControllerVoiture.php")));
 // On recupère l'action passée dans l'URL
 

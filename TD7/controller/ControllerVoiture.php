@@ -27,30 +27,9 @@ class ControllerVoiture {
   }else {
     $view = 'detail';
     $controller = 'voiture';
-    require (File::build_path(array("view", "view.php")));
+   require (File::build_path(array("view", "view.php")));
           // require ('../view/voiture/detail.php');
-  }
-
-}
-
-public static function delete(){
-  $tab_v = ModelVoiture::getAllVoitures();
-  $immat = $_GET['immat'];
-
-  $pagetitle = $immat;
-
-  $v = ModelVoiture::getVoitureByImmat($immat);
-  if ($v == null) {
-    $view = 'error';
-    $controller = 'voiture';
-    require (File::build_path(array("view", "view.php")));
-  }else {
-    ModelVoiture::deleteByImmat($immat);
-    $view = 'deleted';
-    $controller = 'voiture';
-    require (File::build_path(array("view", "view.php")));
-          // require ('../view/voiture/detail.php');
-  }
+ }
 
 }
 
@@ -80,27 +59,5 @@ public static function created(){
   require (File::build_path(array("view", "view.php")));
 
 
-}
-public function update($data){
-
-  $sql = "UPDATE Voiture
-  SET couleur=:tag_couleur, marque=:tag_marque
-  WHERE immatriculation=:imma_tag";
-  $req_prep = Model::$pdo->prepare($sql);
-  $values = array(
-    "imma_tag" => $data['immat'],
-    "tag_marque" => $data['marque'],
-    "tag_couleur" => $data['couleur'],
-  );
-  $req_prep->execute($values);
-
-}
-
-public static function error(){
-  $pagetitle='Erreur';
-  $controller='voiture';
-  $view='error';
-
-  require (File::build_path(array("view", "view.php")));         
 }
 }
